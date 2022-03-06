@@ -607,7 +607,11 @@ public class QLSVVIew extends JFrame implements Serializable{
             ThiSinh thiSinh = new ThiSinh(maThiSinh, tenThiSinh, tinhThanh, ngaySinh,
                     gioiTinh, diemMon1, diemMon2, diemMon3);
 
-            this.checkingUpdateTable(thiSinh);
+            // Khi ấn nút save có 2 trường hợp xảy ra
+            // Nếu dữ liệu chưa có => Tạo mới dữ liệu
+            // Nếu dữ liệu đã có => Cập nhật dữ liệu
+            this.checkingUpdateTable(thiSinh); // xử lí sự kiện udpate
+
             JOptionPane.showMessageDialog(this, "Lưu dữ liệu thành công !",
                     "Save Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
